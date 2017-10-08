@@ -15,6 +15,10 @@ public class BackgroundPaneController {
 
     @FXML
     public void initialize() {
+        setMainWindow();
+    }
+
+    public void setMainWindow() {
         FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/fxml/MainWindowFXML.fxml"));
         AnchorPane anchorPane = null;
         try {

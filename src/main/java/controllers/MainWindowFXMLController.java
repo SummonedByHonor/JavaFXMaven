@@ -14,6 +14,7 @@ public class MainWindowFXMLController {
 //    AnchorPane anchorPane;
 
     public void exitProgram(ActionEvent actionEvent) {
+
         System.exit(0);
     }
 
@@ -32,6 +33,7 @@ public class MainWindowFXMLController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        AddMovieToBaseFXMLController addMovieToBaseFXMLController = loader.getController();
         backgroundPaneController.setScreen(addMovieAnchorPane);
 
     }

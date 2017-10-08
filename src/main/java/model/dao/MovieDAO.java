@@ -47,7 +47,7 @@ public class MovieDAO {
         }
     }
 
-    public Movie getMovie(Integer movieId) {
+    public String getMovieTitle(Integer movieId) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction tx = null;
         Movie movie = null;
@@ -61,8 +61,8 @@ public class MovieDAO {
         } finally {
             session.close();
         }
-
-        return movie;
+        String movieTitle = movie.getTitle();
+        return movieTitle;
     }
 
     public List<Movie> getMovieList() {
@@ -82,5 +82,6 @@ public class MovieDAO {
 
         return movies;
     }
+
 
 }

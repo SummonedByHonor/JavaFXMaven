@@ -45,9 +45,7 @@
       <TableView fx:id="moviesTableFX" layoutX="290.0" layoutY="26.0" prefHeight="376.0" prefWidth="310.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="27.0">
         <columns>
           <TableColumn fx:id="titleColumn" prefWidth="75.0" text="Tytuł" />
-          <TableColumn fx:id="directorColumn" prefWidth="75.0" text="Reżyser" />
             <TableColumn fx:id="yearColumn" prefWidth="76.0" text="Rok Produkcji" />
-            <TableColumn fx:id="durationColumn" prefWidth="85.0" text="Czas trwania" />
         </columns>
          <opaqueInsets>
             <Insets />

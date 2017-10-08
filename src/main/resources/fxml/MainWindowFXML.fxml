@@ -8,11 +8,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainWindowFXMLController">
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainWindowFXMLController">
    <children>
       <Button fx:id="addMovies" layoutX="73.0" layoutY="178.0" mnemonicParsing="false" onAction="#enterAddMovieWindow" prefHeight="85.0" prefWidth="150.0" text="Dodaj film do bazy" />
       <Button fx:id="showMoviesInfo" layoutX="411.0" layoutY="178.0" mnemonicParsing="false" onAction="#enterShowMovieInfoWindow" prefHeight="85.0" prefWidth="150.0" text="Zobacz opisy filmów" />
-      <Button fx:id="showShowsSchedule" layoutX="245.0" layoutY="178.0" mnemonicParsing="false" onAction="#enterShowScheduleWindow" prefHeight="85.0" prefWidth="150.0" text="Przeglądaj seanse" />
+      <Button fx:id="showShowsSchedule" layoutX="245.0" layoutY="178.0" mnemonicParsing="false" onAction="#enterShowScheduleWindow" prefHeight="85.0" prefWidth="150.0" text="Zarezerwuj miejsce na seans">
+         <font>
+            <Font size="10.0" />
+         </font></Button>
       <MenuBar fx:id="menuBar" layoutY="2.0" prefHeight="25.0" prefWidth="600.0">
          <menus>
             <Menu mnemonicParsing="false" text="File">
