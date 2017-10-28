@@ -30,6 +30,7 @@ public class BackgroundPaneController {
         controller.setBackgroundPaneController(this);
 
         setScreen(anchorPane);
+
     }
 
     public void setScreen(Pane pane) {

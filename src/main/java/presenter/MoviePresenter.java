@@ -28,4 +28,7 @@ AddMovieToBaseFXMLController addMovieToBaseFXMLController;
         return gottenMovieTitle;
     }
 
+    public void removeMovieFromDatabase(Movie movie, int index){
+        movieDAO.deleteMove(movie, index);
+    }
 }

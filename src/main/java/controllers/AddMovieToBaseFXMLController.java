@@ -2,25 +2,19 @@ package controllers;
 
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
 
-import javafx.scene.control.cell.PropertyValueFactory;
 import model.Movie;
 import presenter.MoviePresenter;
-import sun.rmi.log.LogInputStream;
 
-import java.io.IOException;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-import java.util.Observable;
 
 
 public class AddMovieToBaseFXMLController {
@@ -43,14 +37,6 @@ public class AddMovieToBaseFXMLController {
     @FXML
     TextField durationTextField;
 
-    @FXML
-    private Button addMovieButton;
-
-    @FXML
-    private Button deleteMovieButton;
-
-    @FXML
-    private Button returnButton;
 
     @FXML
     private TableView<Movie> moviesTableFX;
@@ -99,6 +85,13 @@ public class AddMovieToBaseFXMLController {
     }
 
     public void removeMovieFromDatabase(ActionEvent actionEvent) {
+        int selectedIndex = moviesTableFX.getSelectionModel().getSelectedIndex();
+        if (selectedIndex >= 0) {
+            moviesTableFX.getItems().remove(selectedIndex);
+            moviesTableFX.refresh();
+            moviePresenter.removeMovieFromDatabase(movieBegin, selectedIndex);
+
+        }
     }
 
     public void returnToMainMenu(ActionEvent actionEvent) {

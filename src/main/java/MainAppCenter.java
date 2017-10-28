@@ -16,6 +16,7 @@ public class MainAppCenter extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(this.getClass().getResource("/fxml/BackgroundPaneFXML.fxml"));
 
+
         StackPane stackPane = fxmlLoader.load();
 
         Scene scene =  new Scene(stackPane);
@@ -23,5 +24,7 @@ public class MainAppCenter extends Application {
         primaryStage.setScene(scene);
         primaryStage.setTitle("Main Window Application");
         primaryStage.show();
+
+
     }
 }

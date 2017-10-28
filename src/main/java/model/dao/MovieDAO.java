@@ -28,16 +28,20 @@ public class MovieDAO {
     }
 
 
-    public void deleteMove(Movie movie) {
+    public void deleteMove(Movie movie, Integer id) {
         if (movie.getMovie_id() == 0) {
             return;
         }
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction tx = null;
-        Integer movieID = null;
+
+
         try {
             tx = session.beginTransaction();
-            session.delete(movie);
+            Object persistanceInstance = session.load(Movie.class, id);
+            //Movie movieToDelete = session.get(Movie.class, id);
+            session.delete(persistanceInstance);
+            session.delete(session.get(Movie.class, id));
             tx.commit();
         } catch (HibernateException e) {
             if (tx != null) tx.rollback();
@@ -79,9 +83,8 @@ public class MovieDAO {
         } finally {
             session.close();
         }
-
+        session.close();
         return movies;
     }
-
 
 }
