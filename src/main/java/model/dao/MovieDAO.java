@@ -34,13 +34,8 @@ public class MovieDAO {
         }
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction tx = null;
-
-
         try {
             tx = session.beginTransaction();
-            Object persistanceInstance = session.load(Movie.class, id);
-            //Movie movieToDelete = session.get(Movie.class, id);
-            session.delete(persistanceInstance);
             session.delete(session.get(Movie.class, id));
             tx.commit();
         } catch (HibernateException e) {
